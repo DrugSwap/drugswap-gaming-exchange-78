@@ -25,8 +25,9 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 0 ? 'bg-dark-light/90 backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex-shrink-0 text-2xl font-bold text-neon-blue neon-text">
-            DrugSwap
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <img src="/logo.png" alt="DrugSwap Logo" className="h-10 w-10 mr-2" />
+            <span className="text-2xl font-bold text-neon-blue neon-text">DrugSwap</span>
           </Link>
           <div className="hidden md:block">
             <div className="flex items-center space-x-4 overflow-x-auto pb-2 max-w-2xl">
