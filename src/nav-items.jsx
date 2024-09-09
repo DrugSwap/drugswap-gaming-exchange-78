@@ -1,4 +1,4 @@
-import { HomeIcon, InfoIcon, HelpCircleIcon, ShoppingCartIcon, UserPlusIcon, ShieldIcon, GamepadIcon, GiftIcon, UsersIcon, MapIcon } from "lucide-react";
+import { HomeIcon, InfoIcon, HelpCircleIcon, ShoppingCartIcon, UserPlusIcon, ShieldIcon, GamepadIcon, GiftIcon, UsersIcon, MapIcon, FileTextIcon } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import TokenInfo from "./pages/TokenInfo.jsx";
 import HowItWorks from "./pages/HowItWorks.jsx";
@@ -8,7 +8,7 @@ import SecurityLegal from "./pages/SecurityLegal.jsx";
 import GamificationRewards from "./pages/GamificationRewards.jsx";
 import AirdropAnnouncement from "./pages/AirdropAnnouncement.jsx";
 import Team from "./pages/Team.jsx";
-import Roadmap from "./pages/Roadmap.jsx";
+import WhitepaperRoadmap from "./pages/WhitepaperRoadmap.jsx";
 
 export const navItems = [
   {
@@ -66,9 +66,9 @@ export const navItems = [
     page: <Team />,
   },
   {
-    title: "Roadmap",
-    to: "/roadmap",
-    icon: <MapIcon className="h-4 w-4" />,
-    page: <Roadmap />,
+    title: "Whitepaper & Roadmap",
+    to: "/whitepaper-roadmap",
+    icon: <FileTextIcon className="h-4 w-4" />,
+    page: <WhitepaperRoadmap />,
   },
 ];
