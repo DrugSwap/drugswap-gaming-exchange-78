@@ -16,7 +16,7 @@ const Marketplace = () => {
     { name: 'Jan', Cannabis: 400, Cocaine: 240, LSD: 200 },
     { name: 'Feb', Cannabis: 300, Cocaine: 139, LSD: 220 },
     { name: 'Mar', Cannabis: 200, Cocaine: 980, LSD: 290 },
-    { name: 'Apr', Cannabis: 278, Cocaine: 390, LSD: 000 },
+    { name: 'Apr', Cannabis: 278, Cocaine: 390, LSD: 0 },
     { name: 'May', Cannabis: 189, Cocaine: 480, LSD: 181 },
     { name: 'Jun', Cannabis: 239, Cocaine: 380, LSD: 250 },
   ];
