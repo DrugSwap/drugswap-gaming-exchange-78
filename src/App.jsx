@@ -12,7 +12,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white">
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white">
           <Navbar />
           <main className="flex-grow container mx-auto px-4 py-8">
             <Routes>
@@ -21,8 +21,8 @@ const App = () => (
               ))}
             </Routes>
           </main>
-          <footer className="bg-green-900 py-4">
-            <div className="container mx-auto text-center text-green-200">
+          <footer className="bg-gray-900 py-4">
+            <div className="container mx-auto text-center text-gray-400">
               <p>&copy; 2024 DrugSwap. All rights reserved.</p>
             </div>
           </footer>
