@@ -1,4 +1,4 @@
-import { HomeIcon, InfoIcon, HelpCircleIcon, ShoppingCartIcon, UserPlusIcon, ShieldIcon, GamepadIcon, GiftIcon, UsersIcon, RoadMapIcon } from "lucide-react";
+import { HomeIcon, InfoIcon, HelpCircleIcon, ShoppingCartIcon, UserPlusIcon, ShieldIcon, GamepadIcon, GiftIcon, UsersIcon, MapIcon } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import TokenInfo from "./pages/TokenInfo.jsx";
 import HowItWorks from "./pages/HowItWorks.jsx";
@@ -68,7 +68,7 @@ export const navItems = [
   {
     title: "Roadmap",
     to: "/roadmap",
-    icon: <RoadMapIcon className="h-4 w-4" />,
+    icon: <MapIcon className="h-4 w-4" />,
     page: <Roadmap />,
   },
 ];
