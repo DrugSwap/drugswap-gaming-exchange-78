@@ -51,18 +51,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // New green color palette
-        green: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+        // Updated color palette
+        neon: {
+          blue: '#4DEEEA',
+          purple: '#9B55FF',
+          pink: '#FF36AB',
+          orange: '#FF9A57',
+          yellow: '#FFE838',
+        },
+        dark: {
+          DEFAULT: '#1A1A2E',
+          light: '#16213E',
+          lighter: '#0F3460',
         },
       },
       borderRadius: {

@@ -1,4 +1,4 @@
-import { HomeIcon, InfoIcon, HelpCircleIcon, ShoppingCartIcon, UserPlusIcon, ShieldIcon, GamepadIcon, GiftIcon, UsersIcon, MapIcon, FileTextIcon } from "lucide-react";
+import { HomeIcon, InfoIcon, HelpCircleIcon, ShoppingCartIcon, UserPlusIcon, ShieldIcon, GamepadIcon, GiftIcon, UsersIcon, MapIcon, FileTextIcon, PillIcon } from "lucide-react";
 import Index from "./pages/Index.jsx";
 import TokenInfo from "./pages/TokenInfo.jsx";
 import HowItWorks from "./pages/HowItWorks.jsx";
@@ -9,6 +9,7 @@ import GamificationRewards from "./pages/GamificationRewards.jsx";
 import AirdropAnnouncement from "./pages/AirdropAnnouncement.jsx";
 import Team from "./pages/Team.jsx";
 import WhitepaperRoadmap from "./pages/WhitepaperRoadmap.jsx";
+import DrugsList from "./pages/DrugsList.jsx";
 
 export const navItems = [
   {
@@ -70,5 +71,11 @@ export const navItems = [
     to: "/whitepaper-roadmap",
     icon: <FileTextIcon className="h-4 w-4" />,
     page: <WhitepaperRoadmap />,
+  },
+  {
+    title: "Drug Tokens",
+    to: "/drug-tokens",
+    icon: <PillIcon className="h-4 w-4" />,
+    page: <DrugsList />,
   },
 ];
