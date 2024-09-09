@@ -5,39 +5,39 @@ import { PillIcon, LeafIcon, DropletIcon, CandyIcon, FlaskConicalIcon } from 'lu
 
 const DrugsList = () => {
   const drugs = [
-    { name: 'CannaCoin', icon: <LeafIcon className="text-neon-green" />, description: 'Relaxation and creativity booster', rarity: 'Common' },
-    { name: 'CocaCrystal', icon: <DropletIcon className="text-neon-blue" />, description: 'Energy and focus enhancer', rarity: 'Rare' },
-    { name: 'LysergicToken', icon: <PillIcon className="text-neon-purple" />, description: 'Mind-expanding experience', rarity: 'Epic' },
-    { name: 'EcstasyEther', icon: <CandyIcon className="text-neon-pink" />, description: 'Euphoria and empathy amplifier', rarity: 'Uncommon' },
-    { name: 'ShroomShares', icon: <FlaskConicalIcon className="text-neon-orange" />, description: 'Spiritual journey facilitator', rarity: 'Legendary' },
+    { name: 'CannaCoin', icon: <LeafIcon className="text-green-400" />, description: 'Relaxation and creativity booster', rarity: 'Common' },
+    { name: 'CocaCrystal', icon: <DropletIcon className="text-blue-400" />, description: 'Energy and focus enhancer', rarity: 'Rare' },
+    { name: 'LysergicToken', icon: <PillIcon className="text-purple-400" />, description: 'Mind-expanding experience', rarity: 'Epic' },
+    { name: 'EcstasyEther', icon: <CandyIcon className="text-pink-400" />, description: 'Euphoria and empathy amplifier', rarity: 'Uncommon' },
+    { name: 'ShroomShares', icon: <FlaskConicalIcon className="text-orange-400" />, description: 'Spiritual journey facilitator', rarity: 'Legendary' },
   ];
 
   return (
-    <div className="container mx-auto py-12 gradient-bg min-h-screen text-neon-blue">
-      <h1 className="text-5xl font-bold mb-8 text-center neon-text">DrugSwap Game Tokens</h1>
+    <div className="container mx-auto py-12 bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen text-white">
+      <h1 className="text-5xl font-bold mb-8 text-center text-blue-400 animate-pulse">DrugSwap Game Tokens</h1>
 
       <section className="mb-12">
-        <Card className="bg-dark-light/50 border-neon-purple neon-border">
+        <Card className="bg-gray-800 border-purple-500 border-2">
           <CardHeader>
-            <CardTitle className="text-2xl text-neon-yellow">Available Tokens</CardTitle>
+            <CardTitle className="text-2xl text-yellow-400">Available Tokens</CardTitle>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="text-neon-orange">Token</TableHead>
-                  <TableHead className="text-neon-orange">Name</TableHead>
-                  <TableHead className="text-neon-orange">Description</TableHead>
-                  <TableHead className="text-neon-orange">Rarity</TableHead>
+                  <TableHead className="text-orange-400">Token</TableHead>
+                  <TableHead className="text-orange-400">Name</TableHead>
+                  <TableHead className="text-orange-400">Description</TableHead>
+                  <TableHead className="text-orange-400">Rarity</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {drugs.map((drug) => (
-                  <TableRow key={drug.name} className="hover:bg-dark-lighter/50 transition-colors">
+                  <TableRow key={drug.name} className="hover:bg-gray-700 transition-colors">
                     <TableCell>{drug.icon}</TableCell>
-                    <TableCell className="font-medium">{drug.name}</TableCell>
-                    <TableCell>{drug.description}</TableCell>
-                    <TableCell>{drug.rarity}</TableCell>
+                    <TableCell className="font-medium text-blue-300">{drug.name}</TableCell>
+                    <TableCell className="text-gray-300">{drug.description}</TableCell>
+                    <TableCell className="text-green-400">{drug.rarity}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -47,10 +47,10 @@ const DrugsList = () => {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-neon-yellow">Game Possibilities</h2>
-        <Card className="bg-dark-light/50 border-neon-purple neon-border">
+        <h2 className="text-3xl font-semibold mb-6 text-yellow-400">Game Possibilities</h2>
+        <Card className="bg-gray-800 border-purple-500 border-2">
           <CardContent className="p-6">
-            <ul className="list-disc list-inside text-neon-blue space-y-2">
+            <ul className="list-disc list-inside text-blue-300 space-y-2">
               <li>Trade tokens with other players to complete your collection</li>
               <li>Stake tokens to earn passive income in DRUGS</li>
               <li>Participate in daily challenges to win rare tokens</li>
@@ -64,13 +64,13 @@ const DrugsList = () => {
       </section>
 
       <section>
-        <h2 className="text-3xl font-semibold mb-6 text-neon-yellow">Telegram Mini App Integration</h2>
-        <Card className="bg-dark-light/50 border-neon-purple neon-border">
+        <h2 className="text-3xl font-semibold mb-6 text-yellow-400">Telegram Mini App Integration</h2>
+        <Card className="bg-gray-800 border-purple-500 border-2">
           <CardContent className="p-6">
-            <p className="text-neon-blue mb-4">
+            <p className="text-blue-300 mb-4">
               The DrugSwap Telegram Mini App brings the excitement of token trading to your favorite messaging platform. Here's what you can do:
             </p>
-            <ul className="list-disc list-inside text-neon-blue space-y-2">
+            <ul className="list-disc list-inside text-blue-300 space-y-2">
               <li>View your token balance and portfolio value</li>
               <li>Execute quick trades with other Telegram users</li>
               <li>Receive notifications for market updates and rare token availability</li>
@@ -82,8 +82,8 @@ const DrugsList = () => {
         </Card>
       </section>
 
-      <div className="mt-12 p-6 bg-dark-lighter/50 rounded-lg neon-border">
-        <p className="text-sm text-neon-yellow text-center">
+      <div className="mt-12 p-6 bg-gray-700 rounded-lg border-2 border-yellow-400">
+        <p className="text-sm text-yellow-200 text-center">
           <strong>Disclaimer:</strong> DrugSwap is a fictional platform for entertainment purposes only. 
           We do not condone the use, sale, or distribution of illegal drugs. This platform deals 
           exclusively with imaginary tokens and should not be associated with real drugs or illegal activities.
