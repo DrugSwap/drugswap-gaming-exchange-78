@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { PillIcon, LeafIcon, DropletIcon, CandyIcon, MushroomIcon } from 'lucide-react';
+import { PillIcon, LeafIcon, DropletIcon, CandyIcon, FlaskConicalIcon } from 'lucide-react';
 
 const DrugsList = () => {
   const drugs = [
@@ -9,7 +9,7 @@ const DrugsList = () => {
     { name: 'CocaCrystal', icon: <DropletIcon className="text-neon-blue" />, description: 'Energy and focus enhancer', rarity: 'Rare' },
     { name: 'LysergicToken', icon: <PillIcon className="text-neon-purple" />, description: 'Mind-expanding experience', rarity: 'Epic' },
     { name: 'EcstasyEther', icon: <CandyIcon className="text-neon-pink" />, description: 'Euphoria and empathy amplifier', rarity: 'Uncommon' },
-    { name: 'ShroomShares', icon: <MushroomIcon className="text-neon-orange" />, description: 'Spiritual journey facilitator', rarity: 'Legendary' },
+    { name: 'ShroomShares', icon: <FlaskConicalIcon className="text-neon-orange" />, description: 'Spiritual journey facilitator', rarity: 'Legendary' },
   ];
 
   return (
