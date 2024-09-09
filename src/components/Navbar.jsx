@@ -8,6 +8,7 @@ import { MenuIcon } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [logoLoaded, setLogoLoaded] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,20 +22,27 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleLogoError = () => {
+    setLogoLoaded(false);
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 0 ? 'bg-dark-light/90 backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex-shrink-0 flex items-center">
-            <img 
-              src={`${import.meta.env.BASE_URL}logo.png`} 
-              alt="DrugSwap Logo" 
-              className="h-10 w-10 mr-2"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = `${import.meta.env.BASE_URL}placeholder.svg`;
-              }}
-            />
+            {logoLoaded ? (
+              <img 
+                src={`${import.meta.env.BASE_URL}logo.png`} 
+                alt="DrugSwap Logo" 
+                className="h-10 w-10 mr-2"
+                onError={handleLogoError}
+              />
+            ) : (
+              <div className="h-10 w-10 mr-2 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                DS
+              </div>
+            )}
             <span className="text-2xl font-bold text-neon-blue neon-text">DrugSwap</span>
           </Link>
           <div className="hidden md:block">
