@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -7,21 +7,34 @@ import { MenuIcon } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-green-800 text-white shadow-md">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrollPosition > 0 ? 'bg-green-900/90 backdrop-blur-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 text-xl font-bold">
-              DrugSwap
-            </Link>
-            <div className="hidden md:block ml-10 flex items-baseline space-x-4">
+          <Link to="/" className="flex-shrink-0 text-2xl font-bold text-white">
+            DrugSwap
+          </Link>
+          <div className="hidden md:block">
+            <div className="flex items-baseline space-x-4 overflow-x-auto pb-2 max-w-2xl">
               {navItems.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="px-3 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-green-200 hover:text-white hover:bg-green-700 transition-colors whitespace-nowrap"
                 >
                   {item.title}
                 </Link>
@@ -41,7 +54,7 @@ const Navbar = () => {
                     <Link
                       key={item.to}
                       to={item.to}
-                      className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-green-700 transition-colors"
+                      className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-green-700 transition-colors flex items-center"
                       onClick={() => setIsOpen(false)}
                     >
                       <span className="mr-2">{item.icon}</span>
