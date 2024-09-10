@@ -1,10 +1,27 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GithubIcon, TwitterIcon } from "lucide-react";
+import { GithubIcon, TwitterIcon, TrendingUpIcon, TrendingDownIcon } from "lucide-react";
 import { Link } from 'react-router-dom';
 
+const FeaturedToken = ({ name, trend }) => (
+  <div className="flex items-center justify-between p-2 bg-dark-light/30 rounded-lg">
+    <span className="text-neon-blue">{name}</span>
+    {trend === 'up' ? (
+      <TrendingUpIcon className="text-green-400" />
+    ) : (
+      <TrendingDownIcon className="text-red-400" />
+    )}
+  </div>
+);
+
 const Index = () => {
+  const featuredTokens = [
+    { name: 'CannaCoin', trend: 'up' },
+    { name: 'LysergicToken', trend: 'down' },
+    { name: 'ShroomShares', trend: 'up' },
+  ];
+
   return (
     <div className="text-center min-h-screen flex flex-col justify-center items-center gradient-bg">
       <section className="mb-16 pt-16">
@@ -43,6 +60,19 @@ const Index = () => {
           <li>• Earn DRUGS tokens through active participation</li>
           <li>• Stake tokens for additional rewards</li>
         </ul>
+      </section>
+
+      <section className="mb-16 w-full max-w-2xl">
+        <h2 className="text-4xl font-semibold mb-6 text-neon-yellow">Featured Tokens</h2>
+        <Card className="bg-dark-light/50 border-neon-purple neon-border">
+          <CardContent className="p-6">
+            <div className="space-y-4">
+              {featuredTokens.map((token, index) => (
+                <FeaturedToken key={index} name={token.name} trend={token.trend} />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
       <section className="mb-16">
