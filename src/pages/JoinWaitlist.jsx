@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const JoinWaitlist = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    wallet: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle the form submission,
-    // such as sending the data to a backend API
-    console.log('Form submitted');
-    // You would also trigger the email sending process here
+    const subject = encodeURIComponent("New DrugSwap Waitlist Signup");
+    const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Wallet: ${formData.wallet}
+    `);
+    window.location.href = `mailto:drugswap@gmail.com?subject=${subject}&body=${body}`;
+    toast.success("Thank you for joining the waitlist! Please send the email to complete your registration.");
   };
 
   return (
@@ -24,15 +39,15 @@ const JoinWaitlist = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-              <Input type="text" id="name" name="name" required />
+              <Input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-              <Input type="email" id="email" name="email" required />
+              <Input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} />
             </div>
             <div>
               <label htmlFor="wallet" className="block text-sm font-medium text-gray-700">Ethereum Wallet Address</label>
-              <Input type="text" id="wallet" name="wallet" required />
+              <Input type="text" id="wallet" name="wallet" required value={formData.wallet} onChange={handleChange} />
             </div>
             <Button type="submit" className="w-full">Join Waitlist</Button>
           </form>
